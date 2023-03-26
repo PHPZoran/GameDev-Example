@@ -1,0 +1,165 @@
+Notes:
+
+-Translations are super useful, we can get any text with string = Tr("KEY") from csv file;
+-So our CSV file should basically contain every line we want said.
+-So when we write our dialogue, we don't need to even think about the line, just the KEY.
+-The KEY will be called when we do Tr("KEY").
+-Our dictionary thus, will need a KEY
+
+//Next Steps:
+//Player, Companion, and Save Data: time to change Companion.cs to Save.cs and Save.res in a good directory.
+//Note: in save.res, Companion's data will *already* be initialized. We don't have to re-set all data to zero and can skip if not using it.
+//After that, let's play with bigger text, and then move on to the battle.
+//Once battle is outlined, we have enough of a foundation to form the rest without too much issue.
+
+-Trigger->Set to battle scene. (Done)
+-Who is fighting? ->Get Data for Team Player. (Done)
+-Who are we fighting against?->Generate Data for Team Enemy. (Done)
+
+Image and Positioning stuff:
+	//TextureButton _sprite = new TextureButton(); // Create a new Sprite.
+	//AddChild(_sprite);
+	//var texture = new ImageTexture();
+	//var image = GD.Load("res://godot.png");
+	
+	
+
+//_sprite.TextureNormal = (Texture) image;
+
+//var position_vector = new Vector2(1200,23);
+//_sprite.SetPosition(position_vector);
+
+More garbage code practice
+
+var enemy = GetNode<VBoxContainer>("EnemyTeam");
+	//GD.Print(enemy.GetChildren());
+	var child = (Control)enemy.GetChild(0);
+	
+	var healthchild = (ProgressBar)child.GetChild(1);
+	GD.Print(healthchild.RectPosition);
+
+	healthchild.Value -= 1;
+	if(healthchild.Value == 0){
+		child.QueueFree();
+	}
+	else{
+	GD.Print(healthchild.GetChildren());
+	var healthlabel = (Label)healthchild.GetChild(0);
+	healthlabel.Text = ("2 Health");
+	var enemyr = GetNode<VBoxContainer>("EnemyTeam");
+	GD.Print(enemyr.RectGlobalPosition);
+	var childz = (VBoxContainer)enemyr.GetChild(0);
+	GD.Print(childz.RectGlobalPosition);
+		var child2 = (VBoxContainer)enemy.GetChild(1);
+	GD.Print(child2.RectGlobalPosition);
+	var healthchildren = (ProgressBar)childz.GetChild(1);
+	GD.Print(healthchildren.RectGlobalPosition);
+	var healthchild2 = (ProgressBar)child2.GetChild(1);
+	GD.Print(healthchild2.RectPosition);
+
+	}
+	private void _on_EnemyTeam_Enemy(object instance)
+{
+	var enemy = GetNode<VBoxContainer>("EnemyTeam");
+	GD.Print(enemy.RectGlobalPosition);
+	var child = (VBoxContainer)enemy.GetChild(0);
+	GD.Print(child.RectGlobalPosition);
+		var child2 = (VBoxContainer)enemy.GetChild(1);
+	GD.Print(child2.RectGlobalPosition);
+	var healthchild = (ProgressBar)child.GetChild(1);
+	GD.Print(healthchild.RectGlobalPosition);
+	var healthchild2 = (ProgressBar)child2.GetChild(1);
+	GD.Print(healthchild2.RectPosition);
+	GD.Print(healthchild.GetChildren());
+	var healthlabel = (Label)healthchild.GetChild(0);
+
+}
+
+	}
+keys,en,es,ja
+GREET,"Hello, name!","Hola, amigo!",?????
+ASK,How are you?,Cómo está?,?????
+BYE,Goodbye,Adiós,?????
+QUOTE,"""Hello"" said the man.","""Hola"" dijo el hombre.",??????????????
+LOADMESSAGE1,"House Hart was the most well regarded house of the Summer Kingdom, until their entire family was murdered at the Meeting of the Burning Three.",
+LOADMESSAGE2,The Spring Kingdom is the only Kingdom with a leader decided by a vote held by the noble houses every nine years. They are also the only Kingdom to accept a leader of any class.,
+LOADMESSAGE3,"You can only be a noble of one kingdom. Once named to nobility, your allegiances align to them.",,
+LOADMESSAGE4,Your first companion on difficulties lower than Lone Wolf is stronger than any other companion you may find on your journeys. Treat them well.,,
+LOADMESSAGE5,Honorable actions improve your view with the common people. But dishonorable actions can often increase your power or favor with the nobility.,,
+LOADMESSAGE6,"The first character of the protagonist's line must be human. After completing year one, you may select a child, or do a fresh playthrough and skip to year two with an unknown parent.",,
+LOADMESSAGE7,"The Autumn Kingdom is the most diverse of the four kingdoms. Noble houses comprise of nearly all the common races of humans, elves, and gnomes.",,
+LOADMESSAGE8,Your companion can be any playable race. ,,
+LOADMESSAGE9,"The Spring Kingdom primary encompasses the races of elves and fey. Elves are far more common in the realm, and many do not see a fey in their lifetime.",,
+LOADMESSAGE10,The Summer Kingdom is the only Kingdom to currently practice slavery. It was briefly abolished during the reign of House Hart.,,
+LOADMESSAGE11,"The Summer Kingdom is primary encompassed by humanity. Hybrids and outsiders are looked down upon, and those with beast blood typically make up the ranks of slaves.",,
+LOADMESSAGE12,The Autumn Kingdom is famous for its industriousnes. Portal technology was first founded here.,,
+LOADMESSAGE13,"Little is known of the Winter Kingdom. A mix of dwarves and humans, neither group acknowledges the other's authority, and are often at war with one another.",,
+//This is for using the translation server. DO NOT LOSE THIS LINE either!
+TranslationServer.SetLocale("en");
+				var start = GetNode<RichTextLabel>("%Dialogue");
+				string test2 = Tr("ASK");
+				test2 = test2.Replace("[name]",name);
+				start.Text = test2;
+				var str = "Text\",\"Text\",\"Text";
+				var newstr = str.Replace("Z", ";");
+				GD.Print(str);
+				
+				//Keep around, this helps us save the game, and was a *PAIN* to figure out.
+		string name = "Sam";
+		string text = $"Hello {name}";
+		name = "John";
+		GD.Print(text);
+		GameData data;
+		if(ResourceLoader.Exists("user://GameData.res")){
+			
+		data = (GameData)GD.Load("user://GameData.res"); // Godot loads the Resource when it reads the line.
+			}else{
+		data = (GameData)GD.Load("res://GameData.res");
+			}
+				GD.Print(data.name);
+				data.name = "Arya";
+				
+				data.Save();
+				
+
+
+
+
+//*Game  Design*//
+//Difficulty 
+Lonewolf->remove.
+*We want to keep the theme of two. While one person's personality is carveable, the other one is set by the game.
+*instead:
+->Tier1/Story: The player and their companion can never die. The execution defeat scenario will never play, always ensuring the player will be a survivor. 
+->Tier2/Standard: Balanced around this. No alterations to game rules.
+->Tier3/Strategist: Enemies are much less likely to play other defeat scenarios except execution. A.I. is crueler.
+Optional: Merciless Mode: One life. On death, the save is deleted. Only available for standard/strategist difficulties.
+
+//Companion Relationships:
+->Sibling->Shares the Hart survivor background. Must be human. Summer Kingdom originate
+->Childhood Friend->Child of the guardian. Cannot be human. Spring Kingdom originate. Loses their parent at the start of the story.
+->Stranger: Part of a group vowed to protect the player. From the Autumn Kingdom.
+->Enemy: Part of a group hired to kill the player. Their leader's indiscriminate killing has them turn against their organization. Part of the Winter Kingdom.
+
+Races in the realm: Fey, Elf, Gnome. Human, Dwarf. Cat, Fox.
+Di
+FR races: 			Half-elf, Elf, Gnome, Human, Dwarf, Halfling, Half-oRc
+Skyrim Races:		Breton, Wood Elf, High Elf, Imperial, Nord, Cat, Lizard, Dark-Elf
+
+/* /*if(ResourceLoader.Exists("user://GameData.res")){
+			
+		data = (GameData)GD.Load("user://GameData.res"); // Godot loads the Resource when it reads the line.
+			}else{*/
+		data = (GameData)GD.Load("res://GameData.tres");
+		//	}
+		//data.player = player;
+		//data.companion.Might = 7;
+		//data.companion.FirstName = "Test";
+		//data.Save();
+				GD.Print(player.companion.Might);
+				player.Load(data.player);
+			//	player.companion.Load(data.companion);
+				GD.Print(player.Might);
+				GD.Print(data.companion.FirstName);
+				player = (Player)GetNode("/root/Player");
+				GD.Print(player.Might);*/
