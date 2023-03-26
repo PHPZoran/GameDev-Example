@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/character/Icon.cs" type="Script" id=2]
+
+[node name="ItemIcon" type="TextureRect"]
+margin_left = 1.0
+margin_right = 65.0
+margin_bottom = 64.0
+expand = true
+script = ExtResource( 2 )
+
+[node name="Quantity" type="Label" parent="."]
+margin_left = 48.622
+margin_top = 54.3746
+margin_right = 66.622
+margin_bottom = 68.3746
+align = 2

@@ -1,0 +1,334 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Images/Textures/Containers/InventoryPanel.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/textures/containers/InventoryPanel.png" type="Texture" id=2]
+[ext_resource path="res://src/character/Item.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="Inventory" type="Control"]
+margin_left = 172.791
+margin_top = 334.555
+margin_right = 1149.79
+margin_bottom = 571.555
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_right = 756.0
+margin_bottom = 224.0
+columns = 10
+
+[node name="Slot1" type="Panel" parent="GridContainer"]
+margin_right = 72.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot1" instance=ExtResource( 3 )]
+
+[node name="Slot2" type="Panel" parent="GridContainer"]
+margin_left = 76.0
+margin_right = 148.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot2" instance=ExtResource( 3 )]
+
+[node name="Slot3" type="Panel" parent="GridContainer"]
+margin_left = 152.0
+margin_right = 224.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot3" instance=ExtResource( 3 )]
+
+[node name="Slot4" type="Panel" parent="GridContainer"]
+margin_left = 228.0
+margin_right = 300.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot4" instance=ExtResource( 3 )]
+
+[node name="Slot5" type="Panel" parent="GridContainer"]
+margin_left = 304.0
+margin_right = 376.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot5" instance=ExtResource( 3 )]
+
+[node name="Slot6" type="Panel" parent="GridContainer"]
+margin_left = 380.0
+margin_right = 452.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot6" instance=ExtResource( 3 )]
+
+[node name="Slot7" type="Panel" parent="GridContainer"]
+margin_left = 456.0
+margin_right = 528.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot7" instance=ExtResource( 3 )]
+
+[node name="Slot8" type="Panel" parent="GridContainer"]
+margin_left = 532.0
+margin_right = 604.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot8" instance=ExtResource( 3 )]
+
+[node name="Slot9" type="Panel" parent="GridContainer"]
+margin_left = 608.0
+margin_right = 680.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot9" instance=ExtResource( 3 )]
+
+[node name="Slot10" type="Panel" parent="GridContainer"]
+margin_left = 684.0
+margin_right = 756.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot10" instance=ExtResource( 3 )]
+
+[node name="Slot11" type="Panel" parent="GridContainer"]
+margin_top = 76.0
+margin_right = 72.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot11" instance=ExtResource( 3 )]
+
+[node name="Slot12" type="Panel" parent="GridContainer"]
+margin_left = 76.0
+margin_top = 76.0
+margin_right = 148.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot12" instance=ExtResource( 3 )]
+
+[node name="Slot13" type="Panel" parent="GridContainer"]
+margin_left = 152.0
+margin_top = 76.0
+margin_right = 224.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot13" instance=ExtResource( 3 )]
+
+[node name="Slot14" type="Panel" parent="GridContainer"]
+margin_left = 228.0
+margin_top = 76.0
+margin_right = 300.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot14" instance=ExtResource( 3 )]
+
+[node name="Slot15" type="Panel" parent="GridContainer"]
+margin_left = 304.0
+margin_top = 76.0
+margin_right = 376.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot15" instance=ExtResource( 3 )]
+
+[node name="Slot16" type="Panel" parent="GridContainer"]
+margin_left = 380.0
+margin_top = 76.0
+margin_right = 452.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot16" instance=ExtResource( 3 )]
+
+[node name="Slot17" type="Panel" parent="GridContainer"]
+margin_left = 456.0
+margin_top = 76.0
+margin_right = 528.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot17" instance=ExtResource( 3 )]
+
+[node name="Slot18" type="Panel" parent="GridContainer"]
+margin_left = 532.0
+margin_top = 76.0
+margin_right = 604.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot18" instance=ExtResource( 3 )]
+
+[node name="Slot19" type="Panel" parent="GridContainer"]
+margin_left = 608.0
+margin_top = 76.0
+margin_right = 680.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot19" instance=ExtResource( 3 )]
+
+[node name="Slot20" type="Panel" parent="GridContainer"]
+margin_left = 684.0
+margin_top = 76.0
+margin_right = 756.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot20" instance=ExtResource( 3 )]
+
+[node name="Slot21" type="Panel" parent="GridContainer"]
+margin_top = 152.0
+margin_right = 72.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot21" instance=ExtResource( 3 )]
+
+[node name="Slot22" type="Panel" parent="GridContainer"]
+margin_left = 76.0
+margin_top = 152.0
+margin_right = 148.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot22" instance=ExtResource( 3 )]
+
+[node name="Slot23" type="Panel" parent="GridContainer"]
+margin_left = 152.0
+margin_top = 152.0
+margin_right = 224.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot23" instance=ExtResource( 3 )]
+
+[node name="Slot24" type="Panel" parent="GridContainer"]
+margin_left = 228.0
+margin_top = 152.0
+margin_right = 300.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot24" instance=ExtResource( 3 )]
+
+[node name="Slot25" type="Panel" parent="GridContainer"]
+margin_left = 304.0
+margin_top = 152.0
+margin_right = 376.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot25" instance=ExtResource( 3 )]
+
+[node name="Slot26" type="Panel" parent="GridContainer"]
+margin_left = 380.0
+margin_top = 152.0
+margin_right = 452.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot26" instance=ExtResource( 3 )]
+
+[node name="Slot27" type="Panel" parent="GridContainer"]
+margin_left = 456.0
+margin_top = 152.0
+margin_right = 528.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot27" instance=ExtResource( 3 )]
+
+[node name="Slot28" type="Panel" parent="GridContainer"]
+margin_left = 532.0
+margin_top = 152.0
+margin_right = 604.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot28" instance=ExtResource( 3 )]
+
+[node name="Slot29" type="Panel" parent="GridContainer"]
+margin_left = 608.0
+margin_top = 152.0
+margin_right = 680.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot29" instance=ExtResource( 3 )]
+
+[node name="Slot30" type="Panel" parent="GridContainer"]
+margin_left = 684.0
+margin_top = 152.0
+margin_right = 756.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemIcon" parent="GridContainer/Slot30" instance=ExtResource( 3 )]
+
+[node name="Destroy" type="VBoxContainer" parent="."]
+margin_left = 800.755
+margin_top = 88.6082
+margin_right = 872.755
+margin_bottom = 178.608
+custom_constants/separation = 4
+
+[node name="Label" type="Label" parent="Destroy"]
+margin_right = 72.0
+margin_bottom = 31.0
+text = "LABELDESTROY"
+align = 1
+autowrap = true
+
+[node name="Remove" type="Panel" parent="Destroy"]
+margin_top = 35.0
+margin_right = 72.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 72, 72 )
+custom_styles/panel = SubResource( 2 )
+
+[node name="ItemIcon" parent="Destroy/Remove" instance=ExtResource( 3 )]

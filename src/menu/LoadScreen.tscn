@@ -1,0 +1,79 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/fonts/TIMES.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/images/loadscreen/Fall Kingdom.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/loadscreen/Unicorn Loadscreen Idea.png" type="Texture" id=3]
+[ext_resource path="res://src/menu/LoadScreen.cs" type="Script" id=4]
+[ext_resource path="res://assets/Images/LoadScreen/LoadingText4.png" type="Texture" id=5]
+[ext_resource path="res://assets/Images/LoadScreen/LoadingText1.png" type="Texture" id=6]
+[ext_resource path="res://assets/Images/LoadScreen/LoadingText2.png" type="Texture" id=7]
+[ext_resource path="res://assets/Images/LoadScreen/LoadingText3.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/loadscreen/loadscreen1.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/loadscreen/loadscreen2.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/loadscreen/loadscreen.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/loadscreen/Winter Kingdom.png" type="Texture" id=12]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "AUTUMN",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "SPRING",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "SUMMER",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "WINTER",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=1]
+size = 26
+font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="AnimatedLoadImage" type="AnimatedSprite" parent="."]
+position = Vector2( 580.001, 325.005 )
+scale = Vector2( 8.91457, 5.06318 )
+frames = SubResource( 2 )
+animation = "WINTER"
+speed_scale = 0.5
+playing = true
+
+[node name="Message" type="Label" parent="."]
+margin_left = 124.0
+margin_top = 6.0
+margin_right = 1103.0
+margin_bottom = 102.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+autowrap = true
+
+[node name="LoadTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="AnimatedLoadWord" type="AnimatedSprite" parent="."]
+position = Vector2( 1067.94, 615.536 )
+frames = SubResource( 3 )
+frame = 2
+speed_scale = 0.4
+playing = true

@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/images/textures/containers/ContainerFull.png" type="Texture" id=1]
+[ext_resource path="res://src/character/Skill.tscn" type="PackedScene" id=2]
+
+[node name="Skills" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="StatsTexture" type="TextureRect" parent="."]
+margin_left = 2.0
+margin_top = 1.18921
+margin_right = 547.0
+margin_bottom = 584.189
+texture = ExtResource( 1 )
+expand = true
+
+[node name="NameAndPoints" type="HBoxContainer" parent="."]
+margin_left = 20.5
+margin_top = 18.0181
+margin_right = 538.5
+margin_bottom = 61.0181
+custom_constants/separation = 100
+
+[node name="Name" type="Label" parent="NameAndPoints"]
+margin_top = 9.0
+margin_right = 240.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 240, 25 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Godfrey Hart"
+
+[node name="Points" type="Label" parent="NameAndPoints"]
+margin_left = 340.0
+margin_top = 14.0
+margin_right = 461.0
+margin_bottom = 28.0
+text = "LABELSKILLPOINTS"
+
+[node name="NameAndPointsTexture" type="HSeparator" parent="."]
+margin_left = 12.0
+margin_top = 28.0
+margin_right = 535.0
+margin_bottom = 71.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 14.0
+margin_top = 66.0
+margin_right = 537.0
+margin_bottom = 558.0
+
+[node name="Skill" parent="VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 523.0
+margin_bottom = 25.0

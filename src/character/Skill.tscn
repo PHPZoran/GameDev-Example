@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/images/textures/buttons/Increment.png" type="Texture" id=1]
+
+[node name="Skill" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -806.0
+margin_bottom = -603.0
+custom_constants/separation = 100
+
+[node name="Label" type="Label" parent="."]
+margin_top = 15.0
+margin_right = 217.0
+margin_bottom = 29.0
+text = "LABELARMSMASTER LABELNOVICE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 317.0
+margin_right = 345.0
+margin_bottom = 45.0
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+margin_top = 15.0
+margin_right = 8.0
+margin_bottom = 29.0
+text = "0"
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer"]
+margin_left = 12.0
+margin_right = 28.0
+margin_bottom = 45.0
+texture_normal = ExtResource( 1 )

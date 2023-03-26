@@ -1,0 +1,110 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/menu/Options.cs" type="Script" id=1]
+[ext_resource path="res://src/themes/MainTheme.tres" type="Theme" id=2]
+
+[node name="OptionsMenu" type="PopupDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 227.0
+margin_top = 177.0
+margin_right = -483.0
+margin_bottom = -260.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="LabelOptionsTitle" type="Label" parent="."]
+margin_left = 161.0
+margin_top = 5.0
+margin_right = 268.0
+margin_bottom = 22.0
+text = "LABELOPTIONS"
+align = 1
+clip_text = true
+
+[node name="LabelLanguage" type="Label" parent="."]
+margin_left = 297.142
+margin_top = 120.863
+margin_right = 408.142
+margin_bottom = 135.863
+text = "LABELLANGUAGE"
+
+[node name="SelectLanguage" type="OptionButton" parent="."]
+margin_left = 290.78
+margin_top = 146.026
+margin_right = 414.78
+margin_bottom = 166.026
+text = "Spanish"
+items = [ "English", null, false, 0, null, "Spanish", null, false, 1, null ]
+selected = 1
+
+[node name="MusicSlider" type="HSlider" parent="."]
+margin_left = 295.147
+margin_top = 54.1499
+margin_right = 409.147
+margin_bottom = 70.1499
+min_value = -60.0
+max_value = 0.0
+
+[node name="SFXSlider" type="HSlider" parent="."]
+margin_left = 295.3
+margin_top = 97.4725
+margin_right = 410.3
+margin_bottom = 113.473
+min_value = -60.0
+max_value = 0.0
+
+[node name="ButtonAutoContinue" type="CheckButton" parent="."]
+margin_left = 28.0
+margin_top = 48.0
+margin_right = 265.0
+margin_bottom = 88.0
+text = "LABELAUTOCONTINUE"
+align = 1
+
+[node name="ButtonInstantText" type="CheckButton" parent="."]
+margin_left = 28.0
+margin_top = 81.0
+margin_right = 265.0
+margin_bottom = 121.0
+text = "LABELINSTANTTEXT"
+align = 1
+
+[node name="LabelMusic" type="Label" parent="."]
+margin_left = 278.257
+margin_top = 33.4719
+margin_right = 414.257
+margin_bottom = 47.4719
+text = "LABELMUSICVOLUME"
+align = 1
+
+[node name="ButtonAdultContent" type="CheckButton" parent="."]
+margin_left = 40.0
+margin_top = 115.0
+margin_right = 262.0
+margin_bottom = 155.0
+pressed = true
+text = "LABELADULTCONTENT"
+
+[node name="LabelSFX" type="Label" parent="."]
+margin_left = 293.865
+margin_top = 76.8108
+margin_right = 409.865
+margin_bottom = 90.8108
+text = "LABELSFXVOLUME"
+align = 1
+
+[node name="ButtonDone" type="Button" parent="."]
+margin_left = 184.649
+margin_top = 174.784
+margin_right = 253.649
+margin_bottom = 194.784
+text = "LABELDONE"
+
+[connection signal="item_selected" from="SelectLanguage" to="." method="OnNewLanguageSelected"]
+[connection signal="value_changed" from="MusicSlider" to="." method="OnMusicSliderChange"]
+[connection signal="value_changed" from="SFXSlider" to="." method="OnSFXSliderChange"]
+[connection signal="toggled" from="ButtonAutoContinue" to="." method="OnAutoToggle"]
+[connection signal="toggled" from="ButtonInstantText" to="." method="OnInstantToggle"]
+[connection signal="toggled" from="ButtonAdultContent" to="." method="OnAdultToggle"]
+[connection signal="pressed" from="ButtonDone" to="." method="OnDone"]

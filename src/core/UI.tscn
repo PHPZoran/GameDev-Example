@@ -1,0 +1,210 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/core/GameScreen.cs" type="Script" id=1]
+[ext_resource path="res://assets/Images/LoadScreen/loadscreen1.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/TIMES.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://src/dialogue/Text.cs" type="Script" id=4]
+[ext_resource path="res://src/dialogue/Action.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/Images/Icons/Notification/QuestNotifyLayer 1.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "QuestNotify"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("QuestNotify/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("QuestNotify/Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("QuestNotify/Sprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("QuestNotify/Sprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("QuestNotify/Sprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+
+[node name="GameScreen" type="Control"]
+margin_right = 1152.0
+margin_bottom = 649.0
+rect_min_size = Vector2( 100, 100 )
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 3.36743
+margin_top = 1.68369
+margin_right = 1152.37
+margin_bottom = 173.684
+color = Color( 0.223529, 0.0156863, 0.0156863, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 6.32273
+margin_top = 171.731
+margin_right = 1151.33
+margin_bottom = 564.731
+color = Color( 0.345098, 0.0745098, 0.207843, 1 )
+
+[node name="Dialogue" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+margin_left = 269.0
+margin_top = 178.0
+margin_right = 792.0
+margin_bottom = 363.0
+custom_fonts/normal_font = SubResource( 1 )
+scroll_following = true
+script = ExtResource( 4 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 329.0
+margin_top = 367.0
+margin_right = 733.0
+margin_bottom = 478.0
+rect_min_size = Vector2( 278, 64 )
+
+[node name="ResponseContainer" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+
+[node name="Loadscreen1" type="Sprite" parent="."]
+position = Vector2( 516.927, 89.9635 )
+scale = Vector2( 1, 1.09301 )
+texture = ExtResource( 2 )
+
+[node name="ContinueButton" type="Button" parent="."]
+unique_name_in_owner = true
+margin_left = 410.318
+margin_top = 484.945
+margin_right = 601.318
+margin_bottom = 504.945
+text = "LABELCONTINUE"
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = 6.0
+margin_top = 563.0
+margin_right = 1154.0
+margin_bottom = 645.0
+color = Color( 0.447059, 0.0666667, 0.635294, 1 )
+
+[node name="TestButton" type="Button" parent="."]
+margin_left = 277.661
+margin_top = 564.181
+margin_right = 443.661
+margin_bottom = 639.181
+text = "TestButton"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 29.0
+margin_top = 11.0
+margin_right = 200.0
+margin_bottom = 113.0
+text = "Map, Time of Day, Region"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 1013.94
+margin_top = 2.77538
+margin_right = 1150.94
+margin_bottom = 40.7754
+text = "Journal/History/Notes"
+
+[node name="LocationList" type="VBoxContainer" parent="."]
+margin_left = 854.0
+margin_top = 272.0
+margin_right = 1129.0
+margin_bottom = 519.0
+
+[node name="Action" parent="." instance=ExtResource( 5 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.5
+anims/QuestNotify = SubResource( 4 )
+anims/RESET = SubResource( 3 )
+
+[node name="QuestNotify" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 857.0
+margin_top = 26.0
+margin_right = 960.0
+margin_bottom = 153.0
+
+[node name="NotifyLabel" type="Label" parent="QuestNotify"]
+margin_right = 104.0
+margin_bottom = 31.0
+text = "LABELQUESTSUPDATED
+"
+
+[node name="Sprite" type="Sprite" parent="QuestNotify"]
+position = Vector2( 53.9556, 57.4803 )
+texture = ExtResource( 6 )
+hframes = 3
+vframes = 3
+frame = 8
+__meta__ = {
+"_aseprite_wizard_config_": {
+"layer": "Layer 1",
+"o_ex_p": "",
+"o_folder": "res://",
+"o_name": "QuestNotify",
+"only_visible": false,
+"op_exp": false,
+"player": "AnimationPlayer",
+"source": "res://assets/aseprite/QuestNotify.aseprite"
+}
+}
+
+[connection signal="TextFinished" from="Dialogue" to="." method="OnTextFinished"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="QuestNotify" from="Action" to="." method="QuestNotification"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="OnAnimationPlayerFinish"]

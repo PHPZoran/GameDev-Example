@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/core/GameData.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+_savename = null
+main = null
+ally = null
+origin = 0
+lastText = null
+merciless = false
+gold = 0
+variable = null
+activequests = null
+completedquests = null
+inventory = null

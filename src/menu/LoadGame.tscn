@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/menu/LoadGame.cs" type="Script" id=1]
+[ext_resource path="res://src/themes/MainTheme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/images/textures/buttons/button3.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 82, 80 )
+expand_margin_top = 3.0
+
+[node name="LoadGame" type="PopupDialog"]
+visible = true
+margin_left = 296.0
+margin_top = 125.0
+margin_right = 943.0
+margin_bottom = 469.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 261.786
+margin_top = 10.882
+margin_right = 375.786
+margin_bottom = 24.882
+size_flags_horizontal = 0
+text = "LABELLOADGAME"
+
+[node name="Close" type="Button" parent="Label"]
+margin_left = 345.214
+margin_top = 5.118
+margin_right = 365.214
+margin_bottom = 25.118
+custom_styles/normal = SubResource( 1 )
+text = "X"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 29.0
+margin_top = 30.0
+margin_right = 599.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 480, 280 )
+size_flags_horizontal = 5
+
+[node name="LoadGameContainer" type="GridContainer" parent="ScrollContainer"]
+margin_right = 500.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 500, 280 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/hseparation = 25
+columns = 2
+
+[connection signal="pressed" from="Label/Close" to="." method="OnClosePressed"]

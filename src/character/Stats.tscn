@@ -1,0 +1,636 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/images/textures/containers/ContainerFull.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/Textures/Buttons/Increment.png" type="Texture" id=3]
+[ext_resource path="res://src/themes/MainTheme.tres" type="Theme" id=4]
+[ext_resource path="res://src/character/Stats.cs" type="Script" id=5]
+[ext_resource path="res://src/character/IncrementStat.cs" type="Script" id=6]
+
+[node name="PlayerStats" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -604.0
+margin_bottom = -56.0
+theme = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="StatsTexture" type="TextureRect" parent="."]
+margin_left = 2.0
+margin_right = 547.0
+margin_bottom = 583.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="NameAndPoints" type="HBoxContainer" parent="."]
+margin_left = 20.5
+margin_top = 18.0181
+margin_right = 538.5
+margin_bottom = 61.0181
+custom_constants/separation = 100
+
+[node name="Name" type="Label" parent="NameAndPoints"]
+margin_top = 9.0
+margin_right = 240.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 240, 25 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Godfrey Hart"
+
+[node name="Points" type="Label" parent="NameAndPoints"]
+margin_left = 340.0
+margin_top = 13.0
+margin_right = 514.0
+margin_bottom = 30.0
+text = "LABELATTRIBUTEPOINTS"
+
+[node name="NameAndPointsTexture" type="HSeparator" parent="."]
+margin_left = 12.0
+margin_top = 28.0
+margin_right = 535.0
+margin_bottom = 71.0
+
+[node name="AttributeContainer" type="VBoxContainer" parent="."]
+margin_left = 40.6071
+margin_top = 103.528
+margin_right = 246.607
+margin_bottom = 513.528
+
+[node name="Might" type="HBoxContainer" parent="AttributeContainer"]
+margin_right = 220.0
+margin_bottom = 17.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="AttributeContainer/Might"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 16 )
+text = "LABELMIGHT"
+
+[node name="Value" type="Label" parent="AttributeContainer/Might"]
+margin_left = 150.0
+margin_right = 157.0
+margin_bottom = 17.0
+text = "8"
+
+[node name="IncrementButton" type="TextureButton" parent="AttributeContainer/Might" groups=["IncrementButtons"]]
+visible = false
+margin_left = 161.0
+margin_right = 177.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Agility" type="HBoxContainer" parent="AttributeContainer"]
+margin_top = 21.0
+margin_right = 220.0
+margin_bottom = 38.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="AttributeContainer/Agility"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 16 )
+text = "LABELAGILITY"
+
+[node name="Value" type="Label" parent="AttributeContainer/Agility"]
+margin_left = 150.0
+margin_right = 157.0
+margin_bottom = 17.0
+text = "8"
+
+[node name="IncrementButton" type="TextureButton" parent="AttributeContainer/Agility" groups=["IncrementButtons"]]
+visible = false
+margin_left = 183.0
+margin_right = 199.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Vitality" type="HBoxContainer" parent="AttributeContainer"]
+margin_top = 42.0
+margin_right = 220.0
+margin_bottom = 59.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="AttributeContainer/Vitality"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 16 )
+text = "LABELVITALITY"
+
+[node name="Value" type="Label" parent="AttributeContainer/Vitality"]
+margin_left = 150.0
+margin_right = 157.0
+margin_bottom = 17.0
+text = "8"
+
+[node name="IncrementButton" type="TextureButton" parent="AttributeContainer/Vitality" groups=["IncrementButtons"]]
+visible = false
+margin_left = 161.0
+margin_right = 177.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Magic" type="HBoxContainer" parent="AttributeContainer"]
+margin_top = 63.0
+margin_right = 220.0
+margin_bottom = 80.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="AttributeContainer/Magic"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 16 )
+text = "LABELMAGIC"
+
+[node name="Value" type="Label" parent="AttributeContainer/Magic"]
+margin_left = 150.0
+margin_right = 157.0
+margin_bottom = 17.0
+text = "8"
+
+[node name="IncrementButton" type="TextureButton" parent="AttributeContainer/Magic" groups=["IncrementButtons"]]
+visible = false
+margin_left = 161.0
+margin_right = 177.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Willpower" type="HBoxContainer" parent="AttributeContainer"]
+margin_top = 84.0
+margin_right = 220.0
+margin_bottom = 101.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="AttributeContainer/Willpower"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 16 )
+text = "LABELWILLPOWER"
+
+[node name="Value" type="Label" parent="AttributeContainer/Willpower"]
+margin_left = 150.0
+margin_right = 157.0
+margin_bottom = 17.0
+text = "8"
+
+[node name="IncrementButton" type="TextureButton" parent="AttributeContainer/Willpower" groups=["IncrementButtons"]]
+visible = false
+margin_left = 161.0
+margin_right = 177.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Trickery" type="HBoxContainer" parent="AttributeContainer"]
+margin_top = 105.0
+margin_right = 220.0
+margin_bottom = 122.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="AttributeContainer/Trickery"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 16 )
+text = "LABELTRICKERY"
+
+[node name="Value" type="Label" parent="AttributeContainer/Trickery"]
+margin_left = 150.0
+margin_right = 157.0
+margin_bottom = 17.0
+text = "8"
+
+[node name="IncrementButton" type="TextureButton" parent="AttributeContainer/Trickery" groups=["IncrementButtons"]]
+visible = false
+margin_left = 161.0
+margin_right = 177.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="HSeparator" parent="AttributeContainer"]
+margin_top = 126.0
+margin_right = 220.0
+margin_bottom = 130.0
+
+[node name="Health" type="HBoxContainer" parent="AttributeContainer"]
+margin_top = 134.0
+margin_right = 220.0
+margin_bottom = 151.0
+
+[node name="Label" type="Label" parent="AttributeContainer/Health"]
+margin_right = 130.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 130, 16 )
+text = "LABELHEALTH"
+
+[node name="Value" type="Label" parent="AttributeContainer/Health"]
+margin_left = 134.0
+margin_right = 180.0
+margin_bottom = 17.0
+text = "900/900"
+align = 1
+valign = 1
+
+[node name="Energy" type="HBoxContainer" parent="AttributeContainer"]
+margin_top = 155.0
+margin_right = 220.0
+margin_bottom = 172.0
+
+[node name="Label" type="Label" parent="AttributeContainer/Energy"]
+margin_right = 130.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 130, 0 )
+text = "LABELENERGY"
+
+[node name="Value" type="Label" parent="AttributeContainer/Energy"]
+margin_left = 134.0
+margin_right = 180.0
+margin_bottom = 17.0
+text = "100/900"
+align = 1
+valign = 1
+
+[node name="VSeparator2" type="HSeparator" parent="AttributeContainer"]
+margin_top = 176.0
+margin_right = 220.0
+margin_bottom = 180.0
+
+[node name="PierceArmor" type="HBoxContainer" parent="AttributeContainer"]
+margin_top = 184.0
+margin_right = 220.0
+margin_bottom = 201.0
+
+[node name="Label" type="Label" parent="AttributeContainer/PierceArmor"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 0 )
+text = "LABELPIERCEARMOR"
+
+[node name="Value" type="Label" parent="AttributeContainer/PierceArmor"]
+margin_left = 154.0
+margin_right = 168.0
+margin_bottom = 17.0
+text = "10"
+align = 1
+valign = 1
+
+[node name="MeleeArmor" type="HBoxContainer" parent="AttributeContainer"]
+margin_top = 205.0
+margin_right = 220.0
+margin_bottom = 222.0
+
+[node name="Label" type="Label" parent="AttributeContainer/MeleeArmor"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 0 )
+text = "LABELMELEEARMOR"
+
+[node name="Value" type="Label" parent="AttributeContainer/MeleeArmor"]
+margin_left = 154.0
+margin_right = 168.0
+margin_bottom = 17.0
+text = "10"
+align = 1
+valign = 1
+
+[node name="MagicArmor" type="HBoxContainer" parent="AttributeContainer"]
+margin_top = 226.0
+margin_right = 220.0
+margin_bottom = 243.0
+
+[node name="Label" type="Label" parent="AttributeContainer/MagicArmor"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 0 )
+text = "LABELMAGICARMOR"
+
+[node name="Value" type="Label" parent="AttributeContainer/MagicArmor"]
+margin_left = 154.0
+margin_right = 168.0
+margin_bottom = 17.0
+text = "10"
+align = 1
+valign = 1
+
+[node name="Damage" type="HBoxContainer" parent="AttributeContainer"]
+margin_top = 247.0
+margin_right = 220.0
+margin_bottom = 264.0
+
+[node name="Label" type="Label" parent="AttributeContainer/Damage"]
+margin_right = 140.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 140, 0 )
+text = "LABELDAMAGE"
+
+[node name="Value" type="Label" parent="AttributeContainer/Damage"]
+margin_left = 144.0
+margin_right = 177.0
+margin_bottom = 17.0
+text = "10-20"
+align = 1
+valign = 1
+
+[node name="DamageType" type="HBoxContainer" parent="AttributeContainer"]
+margin_top = 268.0
+margin_right = 220.0
+margin_bottom = 285.0
+
+[node name="Label" type="Label" parent="AttributeContainer/DamageType"]
+margin_right = 220.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 220, 0 )
+text = "LABELTYPE:"
+align = 1
+autowrap = true
+
+[node name="AttributeContainer2" type="VBoxContainer" parent="."]
+margin_left = 282.054
+margin_top = 101.244
+margin_right = 517.054
+margin_bottom = 511.244
+
+[node name="Class" type="HBoxContainer" parent="AttributeContainer2"]
+margin_right = 235.0
+margin_bottom = 17.0
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Value" type="Label" parent="AttributeContainer2/Class"]
+margin_left = 72.0
+margin_right = 162.0
+margin_bottom = 17.0
+text = "LABELCLASS"
+
+[node name="Level" type="HBoxContainer" parent="AttributeContainer2"]
+margin_top = 21.0
+margin_right = 235.0
+margin_bottom = 38.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="AttributeContainer2/Level"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 16 )
+text = "LABELLEVEL"
+
+[node name="Value" type="Label" parent="AttributeContainer2/Level"]
+margin_left = 150.0
+margin_right = 157.0
+margin_bottom = 17.0
+text = "1"
+
+[node name="XP" type="HBoxContainer" parent="AttributeContainer2"]
+margin_top = 42.0
+margin_right = 235.0
+margin_bottom = 59.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="AttributeContainer2/XP"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 16 )
+text = "LABELXP"
+
+[node name="Value" type="Label" parent="AttributeContainer2/XP"]
+margin_left = 150.0
+margin_right = 192.0
+margin_bottom = 17.0
+text = "126000"
+
+[node name="NextLevel" type="HBoxContainer" parent="AttributeContainer2"]
+margin_top = 63.0
+margin_right = 235.0
+margin_bottom = 80.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="AttributeContainer2/NextLevel"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 16 )
+text = "LABELNEXTLEVEL"
+
+[node name="Value" type="Label" parent="AttributeContainer2/NextLevel"]
+margin_left = 150.0
+margin_right = 199.0
+margin_bottom = 17.0
+text = "8000000"
+
+[node name="Age" type="HBoxContainer" parent="AttributeContainer2"]
+margin_top = 84.0
+margin_right = 235.0
+margin_bottom = 101.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="AttributeContainer2/Age"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 16 )
+text = "LABELAGE"
+
+[node name="Value" type="Label" parent="AttributeContainer2/Age"]
+margin_left = 150.0
+margin_right = 164.0
+margin_bottom = 17.0
+text = "24"
+
+[node name="Sex" type="HBoxContainer" parent="AttributeContainer2"]
+margin_top = 105.0
+margin_right = 235.0
+margin_bottom = 122.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="AttributeContainer2/Sex"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 16 )
+text = "LABELSEX"
+
+[node name="Value" type="Label" parent="AttributeContainer2/Sex"]
+margin_left = 150.0
+margin_right = 178.0
+margin_bottom = 17.0
+text = "Male"
+
+[node name="Orientation" type="HBoxContainer" parent="AttributeContainer2"]
+margin_top = 126.0
+margin_right = 235.0
+margin_bottom = 143.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="AttributeContainer2/Orientation"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 16 )
+text = "LABELORIENTATION"
+
+[node name="Value" type="Label" parent="AttributeContainer2/Orientation"]
+margin_left = 150.0
+margin_right = 188.0
+margin_bottom = 17.0
+text = "Hetero"
+
+[node name="Race" type="HBoxContainer" parent="AttributeContainer2"]
+margin_top = 147.0
+margin_right = 235.0
+margin_bottom = 164.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="AttributeContainer2/Race"]
+margin_right = 150.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 150, 16 )
+text = "LABELRACE"
+
+[node name="Value" type="Label" parent="AttributeContainer2/Race"]
+margin_left = 150.0
+margin_right = 185.0
+margin_bottom = 17.0
+text = "Katari"
+
+[node name="VSeparator" type="HSeparator" parent="AttributeContainer2"]
+margin_top = 168.0
+margin_right = 235.0
+margin_bottom = 182.0
+custom_constants/separation = 14
+
+[node name="Fire" type="HBoxContainer" parent="AttributeContainer2"]
+margin_top = 186.0
+margin_right = 235.0
+margin_bottom = 203.0
+
+[node name="Label" type="Label" parent="AttributeContainer2/Fire"]
+margin_right = 180.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 180, 16 )
+text = "LABELFIRERES"
+
+[node name="Value" type="Label" parent="AttributeContainer2/Fire"]
+margin_left = 184.0
+margin_right = 203.0
+margin_bottom = 17.0
+text = "5%"
+align = 1
+valign = 1
+
+[node name="Water" type="HBoxContainer" parent="AttributeContainer2"]
+margin_top = 207.0
+margin_right = 235.0
+margin_bottom = 224.0
+
+[node name="Label" type="Label" parent="AttributeContainer2/Water"]
+margin_right = 180.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 180, 0 )
+text = "LABELWATERRES"
+
+[node name="Value" type="Label" parent="AttributeContainer2/Water"]
+margin_left = 184.0
+margin_right = 217.0
+margin_bottom = 17.0
+text = "100%"
+align = 1
+valign = 1
+
+[node name="Earth" type="HBoxContainer" parent="AttributeContainer2"]
+margin_top = 228.0
+margin_right = 235.0
+margin_bottom = 245.0
+
+[node name="Label" type="Label" parent="AttributeContainer2/Earth"]
+margin_right = 180.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 180, 0 )
+text = "LABELEARTHRES"
+
+[node name="Value" type="Label" parent="AttributeContainer2/Earth"]
+margin_left = 184.0
+margin_right = 210.0
+margin_bottom = 17.0
+text = "10%"
+align = 1
+valign = 1
+
+[node name="Air" type="HBoxContainer" parent="AttributeContainer2"]
+margin_top = 249.0
+margin_right = 235.0
+margin_bottom = 266.0
+
+[node name="Label" type="Label" parent="AttributeContainer2/Air"]
+margin_right = 180.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 180, 0 )
+text = "LABELAIRRES"
+
+[node name="Value" type="Label" parent="AttributeContainer2/Air"]
+margin_left = 184.0
+margin_right = 210.0
+margin_bottom = 17.0
+text = "10%"
+align = 1
+valign = 1
+
+[node name="Mental" type="HBoxContainer" parent="AttributeContainer2"]
+margin_top = 270.0
+margin_right = 235.0
+margin_bottom = 287.0
+
+[node name="Label" type="Label" parent="AttributeContainer2/Mental"]
+margin_right = 180.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 180, 0 )
+text = "LABELMENTALRES"
+
+[node name="Value" type="Label" parent="AttributeContainer2/Mental"]
+margin_left = 184.0
+margin_right = 198.0
+margin_bottom = 17.0
+text = "10"
+align = 1
+valign = 1
+
+[node name="Physical" type="HBoxContainer" parent="AttributeContainer2"]
+margin_top = 291.0
+margin_right = 235.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 232, 0 )
+
+[node name="Label" type="Label" parent="AttributeContainer2/Physical"]
+margin_right = 180.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 180, 0 )
+text = "LABELPHYSICALRES"
+
+[node name="Value" type="Label" parent="AttributeContainer2/Physical"]
+margin_left = 184.0
+margin_right = 217.0
+margin_bottom = 17.0
+text = "100%"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="."]
+margin_left = 208.01
+margin_top = 53.1428
+margin_right = 317.01
+margin_bottom = 70.1428
+text = "LABELSTATS"
+align = 1
+
+[connection signal="IncrementAttribute" from="AttributeContainer/Might/IncrementButton" to="." method="OnIncrementOfAttribute"]
+[connection signal="pressed" from="AttributeContainer/Might/IncrementButton" to="AttributeContainer/Might/IncrementButton" method="OnIncrementButtonPressed"]
+[connection signal="IncrementAttribute" from="AttributeContainer/Agility/IncrementButton" to="." method="OnIncrementOfAttribute"]
+[connection signal="pressed" from="AttributeContainer/Agility/IncrementButton" to="AttributeContainer/Agility/IncrementButton" method="OnIncrementButtonPressed"]
+[connection signal="IncrementAttribute" from="AttributeContainer/Vitality/IncrementButton" to="." method="OnIncrementOfAttribute"]
+[connection signal="pressed" from="AttributeContainer/Vitality/IncrementButton" to="AttributeContainer/Vitality/IncrementButton" method="OnIncrementButtonPressed"]
+[connection signal="IncrementAttribute" from="AttributeContainer/Magic/IncrementButton" to="." method="OnIncrementOfAttribute"]
+[connection signal="pressed" from="AttributeContainer/Magic/IncrementButton" to="AttributeContainer/Magic/IncrementButton" method="OnIncrementButtonPressed"]
+[connection signal="IncrementAttribute" from="AttributeContainer/Willpower/IncrementButton" to="." method="OnIncrementOfAttribute"]
+[connection signal="pressed" from="AttributeContainer/Willpower/IncrementButton" to="AttributeContainer/Willpower/IncrementButton" method="OnIncrementButtonPressed"]
+[connection signal="IncrementAttribute" from="AttributeContainer/Trickery/IncrementButton" to="." method="OnIncrementOfAttribute"]
+[connection signal="pressed" from="AttributeContainer/Trickery/IncrementButton" to="AttributeContainer/Trickery/IncrementButton" method="OnIncrementButtonPressed"]

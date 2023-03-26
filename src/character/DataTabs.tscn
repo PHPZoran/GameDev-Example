@@ -1,0 +1,224 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://src/themes/LocationFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/images/textures/buttons/Buttontest.png" type="Texture" id=2]
+[ext_resource path="res://src/character/Equipment.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/images/background/QuestBackground.png" type="Texture" id=5]
+[ext_resource path="res://src/character/Stats.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/images/textures/buttons/Back1.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/textures/buttons/Next1.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/textures/buttons/Back3.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/textures/buttons/Next2.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/textures/buttons/Next3.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/textures/buttons/Back2.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/textures/buttons/Buttontest2.png" type="Texture" id=13]
+[ext_resource path="res://src/character/CurrentQuests.cs" type="Script" id=14]
+[ext_resource path="res://src/menu/Main.cs" type="Script" id=15]
+[ext_resource path="res://src/menu/LoadGame.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/menu/OptionsMenu.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/images/textures/containers/ContainerFull.png" type="Texture" id=18]
+
+[sub_resource type="StyleBoxTexture" id=2]
+content_margin_left = 9.0
+content_margin_right = 9.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 256, 128 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 256, 128 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[node name="DataTabs" type="TabContainer"]
+margin_right = 1093.0
+margin_bottom = 619.0
+custom_colors/font_color_disabled = Color( 0.0431373, 0.141176, 0.180392, 1 )
+custom_colors/font_color_bg = Color( 0.898039, 0.811765, 0.556863, 1 )
+custom_colors/font_color_fg = Color( 0.929412, 0.654902, 0.184314, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/tab_fg = SubResource( 2 )
+custom_styles/tab_bg = SubResource( 3 )
+custom_styles/panel = SubResource( 4 )
+
+[node name="LABELINVENTORY" parent="." instance=ExtResource( 4 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 27.0
+margin_right = 0.0
+margin_bottom = 0.0
+texture = ExtResource( 18 )
+
+[node name="LABELSTATS" type="HBoxContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 27.0
+custom_constants/separation = 59
+
+[node name="PlayerStats" parent="LABELSTATS" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 486.0
+margin_bottom = 592.0
+rect_min_size = Vector2( 486, 292 )
+
+[node name="CompanionStats" parent="LABELSTATS" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 545.0
+margin_top = 0.0
+margin_right = 545.0
+margin_bottom = 592.0
+
+[node name="LABELSKILLS" type="HBoxContainer" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="LABELCURRENTQUESTS" type="NinePatchRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 27.0
+texture = ExtResource( 5 )
+script = ExtResource( 14 )
+
+[node name="QuestPage1" type="VBoxContainer" parent="LABELCURRENTQUESTS"]
+margin_left = 158.0
+margin_top = 53.0
+margin_right = 478.0
+margin_bottom = 484.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="QuestPage2" type="VBoxContainer" parent="LABELCURRENTQUESTS"]
+margin_left = 506.28
+margin_top = 53.2235
+margin_right = 826.28
+margin_bottom = 480.224
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BackButton" type="TextureButton" parent="LABELCURRENTQUESTS"]
+margin_left = 172.837
+margin_top = 486.0
+margin_right = 293.837
+margin_bottom = 534.0
+disabled = true
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 12 )
+texture_disabled = ExtResource( 9 )
+
+[node name="NextButton" type="TextureButton" parent="LABELCURRENTQUESTS"]
+margin_left = 801.927
+margin_top = 483.351
+margin_right = 921.927
+margin_bottom = 532.351
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 10 )
+texture_disabled = ExtResource( 11 )
+
+[node name="LABELCODEX&LORE" type="Container" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 27.0
+
+[node name="LABELMENU" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 27.0
+texture = ExtResource( 18 )
+expand = true
+script = ExtResource( 15 )
+
+[node name="ButtonSave" type="Button" parent="LABELMENU"]
+margin_left = 430.642
+margin_top = 125.482
+margin_right = 635.642
+margin_bottom = 177.482
+text = "LABELSAVE"
+
+[node name="ButtonLoad" type="Button" parent="LABELMENU"]
+margin_left = 433.474
+margin_top = 206.655
+margin_right = 638.474
+margin_bottom = 258.655
+text = "LABELLOAD"
+
+[node name="ButtonOptions" type="Button" parent="LABELMENU"]
+margin_left = 433.0
+margin_top = 287.0
+margin_right = 641.0
+margin_bottom = 332.0
+text = "LABELOPTIONS"
+
+[node name="ButtonMainMenu" type="Button" parent="LABELMENU"]
+margin_left = 437.0
+margin_top = 377.0
+margin_right = 640.0
+margin_bottom = 419.0
+text = "LABELMAINMENU"
+
+[node name="ButtonExitGame" type="Button" parent="LABELMENU"]
+margin_left = 436.054
+margin_top = 453.703
+margin_right = 641.054
+margin_bottom = 484.703
+text = "LABELEXIT"
+
+[node name="LoadGameDialog" parent="LABELMENU" instance=ExtResource( 16 )]
+
+[node name="SavingMessage" type="PopupDialog" parent="LABELMENU"]
+margin_left = 435.0
+margin_top = 52.0
+margin_right = 626.0
+margin_bottom = 92.0
+popup_exclusive = true
+
+[node name="Label" type="Label" parent="LABELMENU/SavingMessage"]
+margin_left = 8.0
+margin_top = 4.0
+margin_right = 184.0
+margin_bottom = 35.0
+text = "LABELSAVING"
+
+[node name="SaveTimer" type="Timer" parent="LABELMENU"]
+
+[node name="OptionsMenu" parent="LABELMENU" instance=ExtResource( 17 )]
+margin_left = 356.0
+margin_top = 234.0
+margin_right = -307.0
+margin_bottom = -182.0
+
+[node name="ConfirmationMenu" type="ConfirmationDialog" parent="LABELMENU"]
+margin_left = 376.0
+margin_top = 362.0
+margin_right = 718.0
+margin_bottom = 432.0
+popup_exclusive = true
+dialog_text = "Are you sure you wish to return to the main menu?"
+
+[node name="ConfirmationExit" type="ConfirmationDialog" parent="LABELMENU"]
+margin_left = 434.0
+margin_top = 432.0
+margin_right = 642.0
+margin_bottom = 502.0
+popup_exclusive = true
+dialog_text = "Are you sure you wish to exit?"
+
+[connection signal="pressed" from="LABELCURRENTQUESTS/BackButton" to="LABELCURRENTQUESTS" method="OnBackPressed"]
+[connection signal="pressed" from="LABELCURRENTQUESTS/NextButton" to="LABELCURRENTQUESTS" method="OnNextPressed"]
+[connection signal="pressed" from="LABELMENU/ButtonSave" to="LABELMENU" method="OnSavePressed"]
+[connection signal="pressed" from="LABELMENU/ButtonLoad" to="LABELMENU" method="OnLoadPressed"]
+[connection signal="pressed" from="LABELMENU/ButtonOptions" to="LABELMENU" method="OnOptionsClick"]
+[connection signal="pressed" from="LABELMENU/ButtonMainMenu" to="LABELMENU" method="OnMenuPressed"]
+[connection signal="pressed" from="LABELMENU/ButtonExitGame" to="LABELMENU" method="OnExitPressed"]
+[connection signal="confirmed" from="LABELMENU/ConfirmationMenu" to="LABELMENU" method="OnConfirmationMenuConfirmed"]
+[connection signal="confirmed" from="LABELMENU/ConfirmationExit" to="LABELMENU" method="OnExit"]

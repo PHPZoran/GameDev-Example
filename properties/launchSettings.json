@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TextAdventure": {
+      "commandName": "Project",
+      "commandLineArgs": "-e --path C:\\Users\\sah10\\Documents\\TextAdventure"
+    }
+  }
+}

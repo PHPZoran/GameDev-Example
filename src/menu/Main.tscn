@@ -1,0 +1,217 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://assets/images/textures/buttons/Options Hover.png" type="Texture" id=1]
+[ext_resource path="res://src/menu/Main.cs" type="Script" id=2]
+[ext_resource path="res://assets/images/textures/buttons/New.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/textures/buttons/New Hover.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/textures/buttons/Load Hover.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/textures/buttons/Load.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/textures/buttons/Options.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/textures/buttons/Exit.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/textures/buttons/Exit Hover.png" type="Texture" id=10]
+[ext_resource path="res://src/menu/LoadGame.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/music/Flutes.mp3" type="AudioStream" id=12]
+[ext_resource path="res://src/menu/OptionsMenu.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/images/textures/buttons/button1.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/textures/containers/ContainerFull.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/textures/buttons/button1h.png" type="Texture" id=16]
+[ext_resource path="res://src/themes/SubmitButton.tres" type="Theme" id=17]
+[ext_resource path="res://src/themes/headertheme.tres" type="Theme" id=18]
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 6.35432, 320, 83.8972 )
+margin_top = 1.62901
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 320, 95 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 320, 95 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 9, 320, 80 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.0666667, 0.188235, 0.0588235, 1 )
+
+[sub_resource type="Theme" id=1]
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/fonts/font = null
+Button/styles/focus = SubResource( 9 )
+Button/styles/hover = SubResource( 5 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 8 )
+PopupDialog/styles/panel = SubResource( 10 )
+RichTextLabel/styles/normal = SubResource( 6 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 320, 95 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color( 0.176471, 0.282353, 0.176471, 1 )
+
+[node name="Main" type="Node"]
+script = ExtResource( 2 )
+
+[node name="MenuBackground" type="ColorRect" parent="."]
+margin_left = 1146.98
+margin_top = 2.8403
+margin_right = 1286.98
+margin_bottom = 373.84
+rect_scale = Vector2( -8.17452, 1.78134 )
+color = Color( 0.0588235, 0.113725, 0.156863, 1 )
+
+[node name="NewGame" type="TextureButton" parent="."]
+anchor_left = 0.001
+anchor_top = 0.001
+anchor_right = 0.003
+anchor_bottom = 0.001
+margin_left = 122.402
+margin_top = 96.3278
+margin_right = 344.354
+margin_bottom = 190.328
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+
+[node name="LoadGame" type="TextureButton" parent="."]
+margin_left = 132.408
+margin_top = 226.863
+margin_right = 356.408
+margin_bottom = 320.863
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 6 )
+
+[node name="Options" type="TextureButton" parent="."]
+margin_left = 124.362
+margin_top = 385.982
+margin_right = 348.362
+margin_bottom = 479.982
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 1 )
+
+[node name="Exit" type="TextureButton" parent="."]
+margin_left = 130.817
+margin_top = 544.816
+margin_right = 354.817
+margin_bottom = 638.816
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+
+[node name="NewGameMenu" type="PopupDialog" parent="."]
+margin_left = 420.945
+margin_top = 117.52
+margin_right = 900.945
+margin_bottom = 408.52
+theme = SubResource( 1 )
+popup_exclusive = true
+
+[node name="Label" type="Label" parent="NewGameMenu"]
+margin_left = 172.145
+margin_top = 10.9168
+margin_right = 336.145
+margin_bottom = 32.9168
+theme = ExtResource( 18 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "LABELNEWGAME"
+align = 1
+
+[node name="Close" type="Button" parent="NewGameMenu"]
+margin_left = 264.0
+margin_top = 239.0
+margin_right = 390.0
+margin_bottom = 276.0
+focus_mode = 1
+theme = ExtResource( 17 )
+enabled_focus_mode = 1
+text = "LABELBACK"
+
+[node name="StoryMode" type="Button" parent="NewGameMenu"]
+margin_left = 36.8466
+margin_top = 82.1591
+margin_right = 172.847
+margin_bottom = 113.159
+focus_mode = 1
+custom_styles/normal = SubResource( 3 )
+enabled_focus_mode = 1
+text = "LABELSTORY"
+
+[node name="Strategist" type="Button" parent="NewGameMenu"]
+margin_left = 316.0
+margin_top = 82.0
+margin_right = 450.0
+margin_bottom = 112.0
+focus_mode = 1
+enabled_focus_mode = 1
+text = "LABELSTRATEGIST"
+
+[node name="Standard" type="Button" parent="NewGameMenu"]
+margin_left = 177.0
+margin_top = 82.0
+margin_right = 310.0
+margin_bottom = 112.0
+focus_mode = 1
+enabled_focus_mode = 1
+text = "LABELSTANDARD"
+
+[node name="NewGameDescription" type="Label" parent="NewGameMenu"]
+margin_left = 68.0
+margin_top = 120.0
+margin_right = 442.0
+margin_bottom = 231.0
+custom_styles/normal = SubResource( 7 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="StartButton" type="Button" parent="NewGameMenu"]
+margin_left = 95.7963
+margin_top = 238.539
+margin_right = 210.796
+margin_bottom = 275.539
+focus_mode = 1
+theme = ExtResource( 17 )
+enabled_focus_mode = 1
+text = "LABELSTART"
+
+[node name="LoadGameDialog" parent="." instance=ExtResource( 11 )]
+visible = false
+
+[node name="AudioStreamMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+mix_target = 1
+bus = "Music"
+
+[node name="OptionsMenu" parent="." instance=ExtResource( 13 )]
+margin_left = 364.0
+margin_top = 222.0
+margin_right = -356.0
+margin_bottom = -215.0
+popup_exclusive = true
+
+[connection signal="pressed" from="NewGame" to="." method="OnNewGame"]
+[connection signal="pressed" from="LoadGame" to="." method="OnLoadPressed"]
+[connection signal="pressed" from="Options" to="." method="OnOptionsClick"]
+[connection signal="pressed" from="Exit" to="." method="OnExit"]
+[connection signal="pressed" from="NewGameMenu/Close" to="." method="OnNewGameClose"]
+[connection signal="pressed" from="NewGameMenu/StoryMode" to="." method="OnStoryModeSelected"]
+[connection signal="pressed" from="NewGameMenu/Strategist" to="." method="OnStrategistPressed"]
+[connection signal="pressed" from="NewGameMenu/Standard" to="." method="OnStandardSelected"]
+[connection signal="pressed" from="NewGameMenu/StartButton" to="." method="OnNewGameStart"]
